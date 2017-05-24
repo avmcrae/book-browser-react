@@ -8,8 +8,8 @@
   "scripts": {
     "build": "webpack --progress --colors -d",
     "build:watch": "yarn run webpack -- --watch",
-    "test": "mocha --compilers js:babel-core/register \"test/**/*.spec.js\"",
-    "test:watch": "mocha --compilers js:babel-core/register --require source-map-support/register --watch \"test/**/*.spec.js\""
+    "test": "mocha --compilers js:babel-core/register --recursive ./test",
+    "test:watch": "yarn test -- --watch --require source-map-support/register"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

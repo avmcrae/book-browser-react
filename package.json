@@ -1,12 +1,13 @@
 {
   "name": "book-browser-react",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:avmcrae/book-browser-react.git",
   "author": "avmcrae <avalonmcrae@gmail.com>",
   "license": "MIT",
+  "main": "server.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --progress --colors -d",
+    "build:watch": "yarn run webpack -- --watch"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -16,6 +17,7 @@
     "webpack": "^2.5.1"
   },
   "dependencies": {
+    "express": "^4.15.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   }

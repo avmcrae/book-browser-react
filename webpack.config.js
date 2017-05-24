@@ -1,4 +1,5 @@
 const path = require("path");
+const nodeModules = path.resolve("./node_modules");
 
 module.exports = {
  entry: path.resolve("./src/index.js"),
@@ -8,7 +9,11 @@ module.exports = {
  },
  module: {
  	rules: [
- 		{test: /\.js$/, use: "babel-loader", exclude: path.resolve("node_modules")}
+    {
+      enforce: "pre",
+      test: /\.js$/, loader: "eslint-loader", exclude: nodeModules
+    },
+ 		{test: /\.js$/, use: "babel-loader", exclude: nodeModules}
  	]
  }
 };

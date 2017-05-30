@@ -1,10 +1,9 @@
 import React from 'react';
 
-import {loadBooks} from "../actions/books";
-import BookList from './BookList';
+import BookListContainer from './bookList/BookListContainer';
 
 const App = () => (
-    <BookList loadBooks={loadBooks} />
+    <BookListContainer />
 );
 
 export default App;

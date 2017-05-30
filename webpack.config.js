@@ -1,8 +1,9 @@
+const webpack = require("webpack");
 const path = require("path");
 const nodeModules = path.resolve("./node_modules");
 
 module.exports = {
- entry: path.resolve("./src/index.js"),
+ entry: ["babel-polyfill", path.resolve("./src/index.js")],
  output: {
    path: path.resolve("./dist"),
    filename: "bundle.js"
@@ -15,5 +16,6 @@ module.exports = {
     },
  		{test: /\.js$/, use: "babel-loader", exclude: nodeModules}
  	]
- }
+ },
+ plugins: [new webpack.DefinePlugin({GOOGLE_BOOKS_API_KEY: JSON.stringify(process.env.GOOGLE_BOOKS_API_KEY || '')})]
 };

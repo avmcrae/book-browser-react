@@ -8,8 +8,8 @@
   "scripts": {
     "build": "webpack --progress --colors -d",
     "build:watch": "yarn run webpack -- --watch",
-    "test": "mocha --compilers js:babel-core/register --recursive ./test",
-    "test:watch": "yarn test -- --watch --require source-map-support/register"
+    "test": "mocha-webpack --webpack-config webpack.config-test.js --require babel-polyfill --recursive test",
+    "test:watch": "yarn test -- --watch"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -19,21 +19,35 @@
     "chai": "^3.5.0",
     "chai-enzyme": "^0.7.1",
     "enzyme": "^2.8.2",
+    "enzyme-wait": "^1.0.9",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-mocha": "^4.9.0",
     "eslint-plugin-react": "^7.0.1",
+    "fetch-mock": "^5.11.0",
     "jsdom": "^11.0.0",
     "mocha": "^3.4.2",
+    "mocha-webpack": "^0.7.0",
+    "nock": "^9.0.13",
     "react-addons-test-utils": "^15.5.1",
     "react-test-renderer": "^15.5.4",
+    "redux-saga-test-plan": "^3.0.2",
     "sinon": "^2.3.1",
     "sinon-chai": "^2.10.0",
-    "webpack": "^2.5.1"
+    "source-map-support": "^0.4.15",
+    "webpack": "^2.5.1",
+    "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
     "express": "^4.15.3",
+    "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.15.3"
   }
 }

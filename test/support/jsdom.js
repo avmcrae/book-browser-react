@@ -1,3 +1,4 @@
+/* global global, require */
 // From: http://jaketrent.com/post/testing-react-with-jsdom/
 const {JSDOM} = require("jsdom");
 const jsdom = new JSDOM("<!doctype html><html><body></body></html>", {url: "http://localhost"});
